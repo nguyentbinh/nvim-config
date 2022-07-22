@@ -1,0 +1,5 @@
+require'cmp-init'
+require'diffview-init'
+require'nvim-tree-init'
+require'telescope-init'
+require'treesitter-init'
