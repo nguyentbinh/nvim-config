@@ -21,9 +21,10 @@ imap <A-k> <C-o>k
 imap <A-h> <C-o>h
 imap <A-l> <C-o>l
 
-" Navigation buffer
+" Navigate buffer
 nmap <S-l> :bnext<CR>
 nmap <S-h> :bprevious<CR>
+nmap <S-q> <CMD>Bdelete!<CR>
 
 " Disable arrow
 if get(g:, 'elite_mode')
@@ -106,9 +107,9 @@ map <silent> <F6> <CMD>DiffviewClose<CR>
 nmap <leader>df <CMD>DiffviewFileHistory %<CR>
 
 " Telescope
-nnoremap <C-p>f <CMD>Telescope find_files<CR>
-nnoremap <C-p>l <CMD>Telescope live_grep<CR>
-nnoremap <C-p>g <CMD>Telescope grep_string<CR>
+nnoremap <leader>ff <CMD>Telescope find_files<CR>
+nnoremap <leader>fl <CMD>Telescope live_grep<CR>
+nnoremap <leader>fg <CMD>Telescope grep_string<CR>
 
 " toggleterm
 function! SetTerminalKeymaps()
@@ -117,6 +118,3 @@ function! SetTerminalKeymaps()
   tnoremap <C-k> <C-\><C-n><C-W>k
   tnoremap <C-l> <C-\><C-n><C-W>l
 endfunction
-
-" copilot
-"imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")
