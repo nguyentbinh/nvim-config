@@ -21,6 +21,10 @@ imap <A-k> <C-o>k
 imap <A-h> <C-o>h
 imap <A-l> <C-o>l
 
+" Navigation buffer
+nmap <S-l> :bnext<CR>
+nmap <S-h> :bprevious<CR>
+
 " Disable arrow
 if get(g:, 'elite_mode')
     nnoremap <Up>    <C-W>+
@@ -105,3 +109,14 @@ nmap <leader>df <CMD>DiffviewFileHistory %<CR>
 nnoremap <C-p>f <CMD>Telescope find_files<CR>
 nnoremap <C-p>l <CMD>Telescope live_grep<CR>
 nnoremap <C-p>g <CMD>Telescope grep_string<CR>
+
+" toggleterm
+function! SetTerminalKeymaps()
+  tnoremap <C-h> <C-\><C-n><C-W>h
+  tnoremap <C-j> <C-\><C-n><C-W>j
+  tnoremap <C-k> <C-\><C-n><C-W>k
+  tnoremap <C-l> <C-\><C-n><C-W>l
+endfunction
+
+" copilot
+"imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")

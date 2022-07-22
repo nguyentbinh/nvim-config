@@ -15,6 +15,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-omni'
 Plug 'hrsh7th/cmp-calc'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'hrsh7th/cmp-copilot'
 Plug 'hrsh7th/nvim-cmp'
 
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
@@ -36,9 +37,13 @@ Plug 'sindrets/diffview.nvim'
 Plug 'airblade/vim-gitgutter'
 
 " Useful tools to make life easier
+Plug 'github/copilot.vim'
+
+Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
+
 Plug 'preservim/nerdcommenter'
 Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-surround'
+Plug 'kylechui/nvim-surround'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -46,7 +51,7 @@ Plug 'honza/vim-snippets'
 Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'machakann/vim-highlightedyank'
-Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Interface
 Plug 'onsails/lspkind.nvim'
@@ -58,7 +63,7 @@ Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
 
-let g:mapleader = "\<Space>l"
+let g:mapleader = "\<Space>"
 
 lua require("init")
 
