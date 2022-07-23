@@ -18,7 +18,6 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-copilot'
 Plug 'hrsh7th/nvim-cmp'
 
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'f3fora/cmp-spell'
 Plug 'uga-rosa/cmp-dictionary'
 Plug 'lukas-reineke/cmp-rg'
@@ -44,9 +43,6 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 Plug 'preservim/nerdcommenter'
 Plug 'Raimondi/delimitMate'
 Plug 'kylechui/nvim-surround'
-
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 
 Plug 'kyazdani42/nvim-tree.lua'
 

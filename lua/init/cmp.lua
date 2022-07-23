@@ -8,7 +8,7 @@ cmp.setup({
         -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
         -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       end,
     },
 
@@ -32,7 +32,7 @@ cmp.setup({
               copilot = "[Copilot]",
               buffer = "[Buffer]",
               nvim_lsp = "[LSP]",
-              ultisnips = "[UltiSnips]",
+              -- ultisnips = "[UtiSnips]",
               omni = "[Omni]",
               spell = "[Spell]",
               dictionary = "[Dict]",
@@ -59,18 +59,12 @@ cmp.setup({
             i = function(fallback)
               if cmp.visible() then
                 cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
-              elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-                vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
               else
                 fallback()
               end
             end,
             s = function(fallback)
-              if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-                vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
-              else
-                fallback()
-              end
+              fallback()
             end
           }),
 
@@ -85,18 +79,12 @@ cmp.setup({
             i = function(fallback)
               if cmp.visible() then
                 cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
-              elseif vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
-                return vim.api.nvim_feedkeys( t("<Plug>(ultisnips_jump_backward)"), 'm', true)
               else
                 fallback()
               end
             end,
             s = function(fallback)
-              if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
-                return vim.api.nvim_feedkeys( t("<Plug>(ultisnips_jump_backward)"), 'm', true)
-              else
-                fallback()
-              end
+              fallback()
             end
           }),
 
@@ -142,7 +130,7 @@ cmp.setup({
         { name = 'copilot' },
         -- { name = 'vsnip' }, -- For vsnip users.
         -- { name = 'luasnip' }, -- For luasnip users.
-        { name = 'ultisnips' }, -- For ultisnips users.
+        -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
         { name = 'nvim_lsp_signature_help' },
         { name = 'buffer' },

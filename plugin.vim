@@ -1,5 +1,3 @@
-let g:python3_host_prog = $HOME.'/.local/share/nvim/python-env/bin/python'
-
 set completeopt=menu,menuone,noselect
 
 " vim-gitgutter settings
@@ -8,11 +6,6 @@ let g:gitgutter_signs = 1
 let g:gitgutter_max_signs = 1000
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_grep = 'rg'
-
-" UltiSnips settings
-let g:UltiSnipsExpandTrigger="<C-y>"
-let g:UltiSnipsJumpForwardTrigger="<C-y>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 " delimitMate settings
 let delimitMate_expand_cr = 2
