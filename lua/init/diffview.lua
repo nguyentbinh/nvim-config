@@ -1,4 +1,4 @@
-require("diffview").setup({
+require"diffview".setup {
   file_panel = {
     listing_style = "tree",             -- One of 'list' or 'tree'
     tree_options = {                    -- Only applies when listing_style is 'tree'
@@ -24,4 +24,4 @@ require("diffview").setup({
       height = 20,
     }
   }
-})
+}

@@ -4,7 +4,6 @@ noremap ; :
 " Edit ~/.vimrc on-the-fly
 nnoremap <leader>ed :split $MYVIMRC<CR>
 nnoremap <leader>de :edit $MYVIMRC<CR>
-nnoremap <leader>ut :edit $HOME/.config/nvim/UltiSnipCR>
 
 " Clear searching highlight
 nnoremap <silent> <leader><backspace> :noh<CR>
@@ -87,20 +86,22 @@ nmap <leader>P "+P
 "-------------------------------
 
 " NvimTree toggle
-map <silent> <F2> :NvimTreeToggle<CR>
+map <silent> <F2> <CMD>NvimTreeToggle<CR>
 
 " Diffview
-nmap <F5> :DiffviewOpen 
-map <silent> <F6> <CMD>DiffviewClose<CR>
-nmap <leader>df <CMD>DiffviewFileHistory %<CR>
+nnoremap <F5> :DiffviewOpen 
+noremap <silent> <leader>dc <CMD>DiffviewClose<CR>
+nnoremap <silent> <leader>df <CMD>DiffviewFileHistory %<CR>
 
 " Telescope
 nnoremap <leader>ff <CMD>Telescope find_files<CR>
 nnoremap <leader>fl <CMD>Telescope live_grep<CR>
 nnoremap <leader>fg <CMD>Telescope grep_string<CR>
+nnoremap gr <CMD>Telescope lsp_references<CR>
 
 " toggleterm
 function! SetTerminalKeymaps()
+  tnoremap <ESC> <C-\><C-n>
   tnoremap <C-h> <C-\><C-n><C-W>h
   tnoremap <C-j> <C-\><C-n><C-W>j
   tnoremap <C-k> <C-\><C-n><C-W>k

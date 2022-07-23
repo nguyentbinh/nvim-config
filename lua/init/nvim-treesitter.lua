@@ -49,10 +49,16 @@ require'nvim-treesitter.configs'.setup {
         ["ic"] = "@class.inner",
         ["ap"] = "@parameter.outer",
         ["ip"] = "@parameter.inner",
+      },
+    },
+  },
+
+  textsubjects = {
+    enable = true,
+    keymaps = {
         ['.'] = 'textsubjects-smart',
         [';'] = 'textsubjects-container-outer',
         ['i;'] = 'textsubjects-container-inner',
-      },
     },
   },
 }

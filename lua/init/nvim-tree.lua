@@ -1,4 +1,4 @@
-require("nvim-tree").setup({
+require"nvim-tree".setup {
   sort_by = "case_insensitive",
   view = {
     adaptive_size = true,
@@ -15,4 +15,4 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = true,
   },
-})
+}
