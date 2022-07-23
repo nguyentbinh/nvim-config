@@ -21,3 +21,7 @@ let g:airline_powerline_fonts = 1
 
 " toggleterm
 autocmd! TermOpen term://* call SetTerminalKeymaps()
+
+" vim-move
+let g:move_key_modifier = 'A'
+let g:move_key_modifier_visualmode = 'S'

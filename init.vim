@@ -24,6 +24,8 @@ Plug 'lukas-reineke/cmp-rg'
 
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'sheerun/vim-polyglot'
 
 " Fuzzy Searching
@@ -41,6 +43,8 @@ Plug 'github/copilot.vim'
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 
 Plug 'numToStr/Comment.nvim'
+
+Plug 'matze/vim-move'
 
 Plug 'windwp/nvim-autopairs'
 Plug 'kylechui/nvim-surround'
