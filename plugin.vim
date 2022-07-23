@@ -7,9 +7,6 @@ let g:gitgutter_max_signs = 1000
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_grep = 'rg'
 
-" delimitMate settings
-let delimitMate_expand_cr = 2
-
 " vim-airline settings
 set noshowmode
 
@@ -21,15 +18,6 @@ let g:airline#extensions#tabline#show_buffers = 0
 
 let g:airline_exclude_preview = 1
 let g:airline_powerline_fonts = 1
-
-" NERDCommenter
-let g:NERDCreateDefaultMappings = 1
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDCommentEmptyLines = 1
-let g:NERDTrimTrailingWhitespace = 1
-let g:NERDToggleCheckAllLines = 1
 
 " toggleterm
 autocmd! TermOpen term://* call SetTerminalKeymaps()

@@ -40,8 +40,9 @@ Plug 'github/copilot.vim'
 
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 
-Plug 'preservim/nerdcommenter'
-Plug 'Raimondi/delimitMate'
+Plug 'numToStr/Comment.nvim'
+
+Plug 'windwp/nvim-autopairs'
 Plug 'kylechui/nvim-surround'
 
 Plug 'kyazdani42/nvim-tree.lua'
