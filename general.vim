@@ -3,6 +3,8 @@ set fileformat=unix
 
 set showcmd
 
+set completeopt=menu,menuone,noselect
+
 " wildmenu
 set wildmenu
 set wildignore+=.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
@@ -47,11 +49,6 @@ augroup END
 
 " Split to the right
 set splitright
-
-" Color settings
-if has ('nvim') || has('termguicolors')
-    set termguicolors
-endif
 
 set background=dark
 colorscheme nightfox

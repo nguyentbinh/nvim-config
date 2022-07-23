@@ -1,6 +1,10 @@
 set nocompatible
 set sw=2
 
+if has('nvim') || has('termguicolors')
+    set termguicolors
+endif
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 " LSP
@@ -27,19 +31,18 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'RRethy/nvim-treesitter-textsubjects'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 
 " Fuzzy Searching
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.*' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
-" Git
-Plug 'sindrets/diffview.nvim'
-Plug 'airblade/vim-gitgutter'
-
 " Useful tools to make life easier
 Plug 'github/copilot.vim'
+
+Plug 'sindrets/diffview.nvim'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 
@@ -54,6 +57,8 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'lukas-reineke/indent-blankline.nvim'
+
+Plug 'norcalli/nvim-colorizer.lua'
 
 " Interface
 Plug 'onsails/lspkind.nvim'

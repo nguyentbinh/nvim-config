@@ -1,5 +1,3 @@
-set completeopt=menu,menuone,noselect
-
 " vim-gitgutter settings
 let g:gitgutter_enabled = 1
 let g:gitgutter_signs = 1
@@ -21,6 +19,10 @@ let g:airline_powerline_fonts = 1
 
 " toggleterm
 autocmd! TermOpen term://* call SetTerminalKeymaps()
+
+" treesitter-context
+hi! CustomTreesitterContext gui=bold guibg=black blend=80
+hi! link TreesitterContext CustomTreeSitterContext
 
 " vim-move
 let g:move_key_modifier = 'A'
