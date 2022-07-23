@@ -63,8 +63,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Interface
 Plug 'onsails/lspkind.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'EdenEast/nightfox.nvim'
 
