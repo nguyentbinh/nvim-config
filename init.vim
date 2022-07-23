@@ -26,6 +26,7 @@ Plug 'lukas-reineke/cmp-rg'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/nvim-treesitter-context'
+Plug 'RRethy/nvim-treesitter-textsubjects'
 Plug 'sheerun/vim-polyglot'
 
 " Fuzzy Searching
