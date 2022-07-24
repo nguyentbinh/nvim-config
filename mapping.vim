@@ -14,18 +14,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
 
-" Navigate buffer
-nmap <S-l> :bnext<CR>
-nmap <S-h> :bprevious<CR>
-nmap <S-q> <CMD>Bdelete!<CR>
-
 " Disable arrow
-if get(g:, 'elite_mode')
-    nnoremap <Up>    <C-W>+
-    nnoremap <Down>  <C-W>-
-    nnoremap <Left>  <C-W><
-    nnoremap <Right> <C-W>>
-endif
+nnoremap <Up>    <C-W>+
+nnoremap <Down>  <C-W>-
+nnoremap <Left>  <C-W><
+nnoremap <Right> <C-W>>
 
 "---------- Highlight next search matching ----------
 
@@ -86,7 +79,7 @@ nmap <leader>P "+P
 "-------------------------------
 
 " NvimTree toggle
-map <silent> <F2> <CMD>NvimTreeToggle<CR>
+noremap <silent> <F2> <CMD>NvimTreeToggle<CR>
 
 " Diffview
 nnoremap <F5> :DiffviewOpen 
@@ -107,3 +100,21 @@ function! SetTerminalKeymaps()
   tnoremap <C-k> <C-\><C-n><C-W>k
   tnoremap <C-l> <C-\><C-n><C-W>l
 endfunction
+
+" bufferline
+nnoremap <silent> <S-q> <CMD>bdelete!<CR>
+nnoremap <silent> <S-h> <CMD>BufferLineCyclePrev<CR>
+nnoremap <silent> <S-l> <CMD>BufferLineCycleNext<CR>
+nnoremap <silent> [b <CMD>BufferLineMovePrev<CR>
+nnoremap <silent> ]b <CMD>BufferLineMoveNext<CR>
+
+nnoremap <silent><leader>1 <CMD>BufferLineGoToBuffer 1<CR>
+nnoremap <silent><leader>2 <CMD>BufferLineGoToBuffer 2<CR>
+nnoremap <silent><leader>3 <CMD>BufferLineGoToBuffer 3<CR>
+nnoremap <silent><leader>4 <CMD>BufferLineGoToBuffer 4<CR>
+nnoremap <silent><leader>5 <CMD>BufferLineGoToBuffer 5<CR>
+nnoremap <silent><leader>6 <CMD>BufferLineGoToBuffer 6<CR>
+nnoremap <silent><leader>7 <CMD>BufferLineGoToBuffer 7<CR>
+nnoremap <silent><leader>8 <CMD>BufferLineGoToBuffer 8<CR>
+nnoremap <silent><leader>9 <CMD>BufferLineGoToBuffer 9<CR>
+nnoremap <silent><leader>$ <CMD>BufferLineGoToBuffer -1<CR>

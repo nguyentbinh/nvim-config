@@ -1,3 +1,4 @@
+require'init.bufferline'
 require'init.cmp'
 require'init.Comment'
 require'init.copilot'

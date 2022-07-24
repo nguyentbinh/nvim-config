@@ -1,10 +1,6 @@
 set nocompatible
 set sw=2
 
-if has('nvim') || has('termguicolors')
-    set termguicolors
-endif
-
 call plug#begin('~/.local/share/nvim/plugged')
 
 " LSP
@@ -55,7 +51,6 @@ Plug 'kylechui/nvim-surround'
 
 Plug 'kyazdani42/nvim-tree.lua'
 
-Plug 'machakann/vim-highlightedyank'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'norcalli/nvim-colorizer.lua'
@@ -64,15 +59,16 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'onsails/lspkind.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'tomasiser/vim-code-dark'
 Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
 
-let g:mapleader = "\<Space>"
+source $HOME/.config/nvim/general.vim
 
 lua require("init")
 
 source $HOME/.config/nvim/plugin.vim
-source $HOME/.config/nvim/general.vim
+
 source $HOME/.config/nvim/mapping.vim

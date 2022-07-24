@@ -1,3 +1,5 @@
+let g:mapleader = "\<Space>"
+
 set encoding=utf-8
 set fileformat=unix
 
@@ -16,9 +18,6 @@ set nobackup
 set nowrap
 
 set noshowmode
-
-" Don't use arrow
-let g:elite_mode = 1
 
 set smartindent
 set autoindent
@@ -49,11 +48,12 @@ augroup cursorline
     autocmd BufLeave,WinLeave * set nocursorline
 augroup END
 
-" Split to the right
+" Split to the bottom and right
+set splitbelow
 set splitright
-
-set background=dark
-colorscheme nightfox
 
 " Fuzzy finder
 set path+=**
+
+set termguicolors
+colorscheme nightfox
