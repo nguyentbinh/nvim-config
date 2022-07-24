@@ -39,7 +39,6 @@ cmp.setup({
               nvim_lsp = "[LSP]",
               -- ultisnips = "[UtiSnips]",
               omni = "[Omni]",
-              spell = "[Spell]",
               dictionary = "[Dict]",
               rg = "[RipGrep]"
             })
@@ -125,7 +124,6 @@ cmp.setup({
         { name = 'buffer' },
         { name = 'path' },
         { name = 'omni' },
-        { name = 'spell' },
         { name = 'dictionary' },
         { name = 'rg' },
       })
@@ -160,3 +158,17 @@ cmp.event:on(
   'confirm_done',
   require('nvim-autopairs.completion.cmp').on_confirm_done()
 )
+
+require'cmp_dictionary'.setup {
+  dic = {
+    ["*"] = { "/usr/share/dict/words" },
+  },
+  -- The following are default values.
+  exact = 2,
+  first_case_insensitive = false,
+  document = false,
+  document_command = "wn %s -over",
+  async = true,
+  capacity = 5,
+  debug = false,
+}

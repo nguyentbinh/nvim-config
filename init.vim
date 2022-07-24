@@ -4,7 +4,7 @@ set sw=2
 call plug#begin('~/.local/share/nvim/plugged')
 
 " LSP
-Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.*' }
 Plug 'williamboman/nvim-lsp-installer'
 
 " nvim-cmp
@@ -18,9 +18,8 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-copilot'
 Plug 'hrsh7th/nvim-cmp'
 
-Plug 'f3fora/cmp-spell'
 Plug 'uga-rosa/cmp-dictionary'
-Plug 'lukas-reineke/cmp-rg'
+Plug 'lukas-reineke/cmp-rg', { 'tag': 'v1.3.*' }
 
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -37,21 +36,22 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " Useful tools to make life easier
 Plug 'github/copilot.vim'
 
+Plug 'tpope/vim-fugitive', { 'tag': 'v3.*' }
 Plug 'sindrets/diffview.nvim'
 Plug 'airblade/vim-gitgutter'
 
-Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
+Plug 'akinsho/toggleterm.nvim', { 'tag': 'v2.*' }
 
-Plug 'numToStr/Comment.nvim'
+Plug 'numToStr/Comment.nvim', { 'tag': 'v0.6.*' }
 
-Plug 'matze/vim-move'
+Plug 'matze/vim-move', { 'tag': 'v1.*' }
 
 Plug 'windwp/nvim-autopairs'
 Plug 'kylechui/nvim-surround'
 
 Plug 'kyazdani42/nvim-tree.lua'
 
-Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim', { 'tag': 'v2.*' }
 
 Plug 'norcalli/nvim-colorizer.lua'
 
