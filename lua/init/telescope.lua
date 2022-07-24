@@ -3,6 +3,8 @@ local actions = require'telescope.actions'
 
 telescope.setup {
   defaults = {
+    path_display = { "smart" },
+
     mappings = {
       n = {
         ["<C-b>"] = actions.preview_scrolling_up,
@@ -11,6 +13,10 @@ telescope.setup {
       i = {
         ["<C-b>"] = actions.preview_scrolling_up,
         ["<C-f>"] = actions.preview_scrolling_down,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<Down>"] = actions.cycle_history_next,
+        ["<Up>"] = actions.cycle_history_prev,
       },
     },
   },

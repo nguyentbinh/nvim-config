@@ -34,11 +34,19 @@ set inccommand=nosplit
 
 set colorcolumn=120
 
+set number relativenumber
+
 " set linenumber
-augroup numbertoggle
+" augroup numbertoggle
+"     autocmd!
+"     autocmd BufEnter,FocusGained * set number relativenumber
+"     autocmd BufLeave,FocusLost * set nonumber norelativenumber
+" augroup END
+
+augroup nvimtreenonumber
     autocmd!
-    autocmd BufEnter,FocusGained * set number relativenumber
-    autocmd BufLeave,FocusLost * set nonumber norelativenumber
+    autocmd BufEnter, FocusGained NvimTree setlocal nonumber norelativenumber
+    autocmd BufLeave, FocusLost NvimTree setlocal nonumber norelativenumber
 augroup END
 
 " set cursorline
@@ -57,3 +65,9 @@ set path+=**
 
 set termguicolors
 colorscheme nightfox
+
+" Highlight yanked text
+augroup HighlightedYank
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=1000}
+augroup END
