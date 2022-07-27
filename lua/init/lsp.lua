@@ -55,7 +55,12 @@ local handlers =  {
   ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = "single"}),
 }
 
-local lsp_servers = {'bashls', 'jsonls', 'sumneko_lua', 'tsserver', 'terraformls', 'sqlls', 'yamlls', 'pyright', 'marksman'}
+local lsp_servers = {
+  'bashls', 'jsonls', 'sumneko_lua',
+  'tsserver', 'terraformls', 'sqlls',
+  'yamlls', 'pyright', 'marksman',
+  'vimls'
+}
 for _, server in ipairs(lsp_servers) do
   require('lspconfig')[server].setup {
     on_attach = on_attach,

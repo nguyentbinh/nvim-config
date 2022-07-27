@@ -37,8 +37,7 @@ cmp.setup({
               copilot = "[Copilot]",
               buffer = "[Buffer]",
               nvim_lsp = "[LSP]",
-              -- ultisnips = "[UtiSnips]",
-              omni = "[Omni]",
+              -- omni = "[Omni]",
               dictionary = "[Dict]",
               rg = "[RipGrep]"
             })
@@ -116,14 +115,10 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'copilot' },
-        -- { name = 'vsnip' }, -- For vsnip users.
-        -- { name = 'luasnip' }, -- For luasnip users.
-        -- { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' }, -- For snippy users.
         { name = 'nvim_lsp_signature_help' },
         { name = 'buffer' },
         { name = 'path' },
-        { name = 'omni' },
+        -- { name = 'omni' },
         { name = 'dictionary' },
         { name = 'rg' },
       })
@@ -164,7 +159,7 @@ require'cmp_dictionary'.setup {
     ["*"] = { "/usr/share/dict/words" },
   },
   -- The following are default values.
-  exact = 2,
+  exact = 6,
   first_case_insensitive = false,
   document = false,
   document_command = "wn %s -over",

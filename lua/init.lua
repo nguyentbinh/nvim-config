@@ -1,7 +1,6 @@
 require'init.bufferline'
 require'init.cmp'
 require'init.Comment'
-require'init.copilot'
 require'init.diffview'
 require'init.indent-blankline'
 require'init.lsp'
