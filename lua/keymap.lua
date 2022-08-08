@@ -8,6 +8,9 @@ vim.api.nvim_set_keymap("n", "<leader>ed", ":edit $MYVIMRC<CR>", default_opts)
 
 vim.api.nvim_set_keymap("n", "<leader><backspace>", ":noh<CR>", default_opts)
 
+vim.api.nvim_set_keymap("n", "n", "nzz", default_opts)
+vim.api.nvim_set_keymap("n", "N", "Nzz", default_opts)
+
 vim.api.nvim_set_keymap("n", "<C-j>", "<C-w><C-j>", default_opts)
 vim.api.nvim_set_keymap("n", "<C-k>", "<C-w><C-k>", default_opts)
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-w><C-h>", default_opts)

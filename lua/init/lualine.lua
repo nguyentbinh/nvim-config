@@ -28,6 +28,7 @@ require'lualine'.setup {
   },
   tabline = {},
   extensions = {
+    "fugitive",
     "quickfix",
     "nvim-tree",
     "toggleterm",

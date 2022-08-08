@@ -25,5 +25,3 @@ nmap <leader>{ ysiw{
 nmap <leader>} ysiw}
 vmap <leader>{ S{
 vmap <leader>} S}
-
-"-------------------------------

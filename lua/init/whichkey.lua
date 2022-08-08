@@ -29,7 +29,10 @@ local function normal_keymap()
 
     d = {
       name = "Diff",
+      b = { "<CMD>Git blame<CR>", "Blame" },
+      g = { "<CMD>Gvdiffsplit<CR>", "Three-way Diff" },
       o = { "<CMD>DiffviewOpen<CR>", "Open Diff" },
+      c = { "<CMD>DiffviewClose<CR>", "Close Diff" },
       h = { "<CMD>DiffviewFileHistory<CR>", "History" },
       f = { "<CMD>DiffviewFileHistory %<CR>", "File History" },
     },
@@ -41,7 +44,7 @@ local function normal_keymap()
       g = { "<CMD>Telescope grep_string<CR>", "Grep String" },
       c = { "<CMD>Telescope commands<CR>", "Commands" },
       r = { "<CMD>Telescope lsp_references<CR>", "References" },
-    }
+    },
   }
 
   whichkey.register(keymap, opts)

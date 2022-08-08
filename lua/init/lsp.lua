@@ -12,7 +12,9 @@ local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<C-q>', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '[e', "<CMD>lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>", opts)
+vim.keymap.set('n', ']e', "<CMD>lua vim.diagnostic.goto_next({severity=vim.diagnostic.severity.ERROR})<CR>", opts)
+vim.keymap.set('n', '<C-q>', vim.diagnostic.setqflist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -35,6 +37,25 @@ local on_attach = function(client, bufnr)
   -- vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   -- vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
+
+  -- whichkey
+  local whichkey = require'which-key'
+  local keymap = {
+    l = {
+      name = "LSP",
+      I = { "<CMD>LspInfo<CR>", "Info" },
+      a = { "<CMD>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
+      f = { "<CMD>lua vim.lsp.buf.formatting()<CR>", "Formatting" },
+      d = { "<CMD>lua vim.lsp.buf.definition()<CR>", "Definition" },
+      D = { "<CMD>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
+      i = { "<CMD>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
+      h = { "<CMD>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+      q = { "<CMD>lua vim.diagnostic.setqflist()<CR>", "Publish to Quickfix" },
+      n = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
+      r = { "<CMD>Telescope lsp_references<CR>", "References" },
+    }
+  }
+  whichkey.register(keymap, { noremap=true, buffer=bufnr, prefix='<leader>' })
 end
 
 -- LSP Installer
