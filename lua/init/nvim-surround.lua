@@ -1,5 +1,5 @@
 require"nvim-surround".setup {
-  highlight_motion = {
+  highlight = {
     duration = 1,
   },
   move_cursor = false,

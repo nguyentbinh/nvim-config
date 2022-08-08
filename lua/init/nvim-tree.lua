@@ -16,3 +16,5 @@ require"nvim-tree".setup {
     dotfiles = true,
   },
 }
+
+vim.keymap.set("n", "<F2>", "<CMD>NvimTreeToggle<CR>", { noremap = true, silent = true })

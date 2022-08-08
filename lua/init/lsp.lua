@@ -39,7 +39,7 @@ end
 
 -- LSP Installer
 require("nvim-lsp-installer").setup({
-    -- automatic_installation = true -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+  automatic_installation = true -- automatically detect which servers to install (based on which servers are set up via lspconfig)
 })
 
 
@@ -58,8 +58,7 @@ local handlers =  {
 local lsp_servers = {
   'bashls', 'jsonls', 'sumneko_lua',
   'tsserver', 'terraformls', 'sqlls',
-  'yamlls', 'pyright', 'marksman',
-  'vimls'
+  'yamlls', 'pyright', 'vimls'
 }
 for _, server in ipairs(lsp_servers) do
   require('lspconfig')[server].setup {

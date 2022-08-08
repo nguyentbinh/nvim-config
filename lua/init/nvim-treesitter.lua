@@ -3,7 +3,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = "all",
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
+  sync_install = true,
 
   -- Automatically install missing parsers when entering buffer
   auto_install = true,
@@ -101,3 +101,6 @@ require'treesitter-context'.setup {
     zindex = 20, -- The Z-index of the context window
     mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
 }
+
+vim.cmd "hi! CustomTreesitterContext gui=bold guibg=black blend=80"
+vim.cmd "hi! link TreesitterContext CustomTreeSitterContext"

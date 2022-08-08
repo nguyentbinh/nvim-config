@@ -37,8 +37,6 @@ cmp.setup({
               copilot = "[Copilot]",
               buffer = "[Buffer]",
               nvim_lsp = "[LSP]",
-              -- omni = "[Omni]",
-              dictionary = "[Dict]",
               rg = "[RipGrep]"
             })
         })
@@ -118,8 +116,6 @@ cmp.setup({
         { name = 'nvim_lsp_signature_help' },
         { name = 'buffer' },
         { name = 'path' },
-        -- { name = 'omni' },
-        { name = 'dictionary' },
         { name = 'rg' },
       })
   })
@@ -153,17 +149,3 @@ cmp.event:on(
   'confirm_done',
   require('nvim-autopairs.completion.cmp').on_confirm_done()
 )
-
-require'cmp_dictionary'.setup {
-  dic = {
-    ["*"] = { "/usr/share/dict/words" },
-  },
-  -- The following are default values.
-  exact = 6,
-  first_case_insensitive = false,
-  document = false,
-  document_command = "wn %s -over",
-  async = true,
-  capacity = 5,
-  debug = false,
-}

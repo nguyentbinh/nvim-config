@@ -1,7 +1,7 @@
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'powerline_dark',
+    theme = 'powerline',
     disabled_filetypes = {},
     globalstatus = false,
     refresh = {

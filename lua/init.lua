@@ -1,7 +1,10 @@
+require'default'
+
 require'init.bufferline'
 require'init.cmp'
 require'init.Comment'
 require'init.diffview'
+require'init.gitsigns'
 require'init.indent-blankline'
 require'init.lsp'
 require'init.lualine'
@@ -12,3 +15,6 @@ require'init.nvim-tree'
 require'init.nvim-treesitter'
 require'init.telescope'
 require'init.toggleterm'
+require'init.whichkey'
+
+require'keymap'

@@ -34,3 +34,10 @@ require'bufferline'.setup {
     sort_by = 'insert_after_end',
   },
 }
+
+local opts = { noremap = true, silent = true }
+vim.keymap.set("n", "<S-q>", "<CMD>bdelete!<CR>", opts)
+vim.keymap.set("n", "<S-h>", "<CMD>BufferLineCyclePrev<CR>", opts)
+vim.keymap.set("n", "<S-l>", "<CMD>BufferLineCycleNext<CR>", opts)
+vim.keymap.set("n", "[b", "<CMD>BufferLineMovePrev<CR>", opts)
+vim.keymap.set("n", "]b", "<CMD>BufferLineMoveNext<CR>", opts)
