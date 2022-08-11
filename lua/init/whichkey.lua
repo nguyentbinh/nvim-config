@@ -1,11 +1,14 @@
-local whichkey = require "which-key"
+local M = {}
+
+local whichkey = require'which-key'
 
 local conf = {
   window = {
-    border = "double", -- none, single, double, shadow
+    border = "single", -- none, single, double, shadow
     position = "bottom", -- bottom, top
   },
 }
+whichkey.setup(conf)
 
 local opts = {
   mode = "n", -- Normal mode
@@ -20,9 +23,9 @@ local function normal_keymap()
   local keymap = {
     b = {
       name = "Buffer",
-      c = { "<CMD>bdelete this<CR>", "Close Buffer" },
-      f = { "<CMD>bdelete! this<CR>", "Force Close Buffer" },
-      D = { "<CMD>bwipeout other<CR>", "Delete All Buffers" },
+      c = { "<CMD>bdelete %<CR>", "Close Buffer" },
+      f = { "<CMD>bdelete! %<CR>", "Force Close Buffer" },
+      D = { "<CMD>bwipeout *<CR>", "Delete All Buffers" },
       b = { "<CMD>BufferLinePick<CR>", "Pick a Buffer" },
       p = { "<CMD>BufferLinePickClose<CR>", "Pick & Close a Buffer" },
     },
@@ -50,5 +53,8 @@ local function normal_keymap()
   whichkey.register(keymap, opts)
 end
 
-whichkey.setup(conf)
-normal_keymap()
+function M.setup()
+  normal_keymap()
+end
+
+return M
