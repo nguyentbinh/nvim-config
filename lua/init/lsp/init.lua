@@ -94,16 +94,11 @@ local servers = {
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 function M.on_attach(client, bufnr)
-  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-  vim.api.nvim_buf_set_option(bufnr, "formatexpr", "v:lua.vim.lsp.formatexpr()")
+  -- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  -- vim.api.nvim_buf_set_option(bufnr, "formatexpr", "v:lua.vim.lsp.formatexpr()")
 
   require'init.lsp.keymap'.setup(client, bufnr)
-
 end
-
-M.flags = {
-  debounce_text_changes = 150,
-}
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.resolveSupport = {
@@ -118,7 +113,9 @@ M.capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities) -- fo
 local opts = {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
-  flags = M.flags
+  flags = {
+    debounce_text_changes = 150,
+  }
 }
 
 require'init.lsp.handlers'.setup()

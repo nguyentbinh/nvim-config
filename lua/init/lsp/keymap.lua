@@ -48,10 +48,6 @@ function M.setup(client, bufnr)
     }
   }
 
-  if client.server_capabilities.documentFormattingProvider then
-    l.F = { "<CMD>lua vim.lsp.buf.format({async = true})<CR>", "Format Document" }
-  end
-
   whichkey.register(keymap, { noremap=true, buffer=bufnr, prefix='<leader>' })
 end
 

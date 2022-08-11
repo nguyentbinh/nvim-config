@@ -5,17 +5,22 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " LSP
 Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.*' }
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'WhoIsSethDaniel/mason-tool-installer.nvim'
+Plug 'folke/lua-dev.nvim'
+Plug 'b0o/schemastore.nvim'
+Plug 'jose-elias-alvarez/typescript.nvim'
 
 " nvim-cmp
-Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-calc'
+Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-copilot'
-Plug 'hrsh7th/nvim-cmp'
 
 Plug 'lukas-reineke/cmp-rg', { 'tag': 'v1.3.*' }
 
@@ -31,7 +36,7 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.*' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Useful tools to make life easier
-" Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.*' }
 Plug 'sindrets/diffview.nvim'
@@ -40,8 +45,6 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'akinsho/toggleterm.nvim', { 'tag': 'v2.*' }
 
 Plug 'numToStr/Comment.nvim', { 'tag': 'v0.6.*' }
-
-Plug 'matze/vim-move', { 'tag': 'v1.*' }
 
 Plug 'windwp/nvim-autopairs'
 Plug 'kylechui/nvim-surround'
