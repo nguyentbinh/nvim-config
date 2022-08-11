@@ -58,6 +58,108 @@ function M.setup()
       },
     }
 
+    -- Completion
+    use {
+      "hrsh7th/nvim-cmp",
+      event = "InsertEnter",
+      opt = true,
+      config = function()
+        require("init.cmp").setup()
+      end,
+      requires = {
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-nvim-lua",
+        "hrsh7th/cmp-cmdline",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-nvim-lsp-signature-help",
+        "hrsh7th/cmp-copilot",
+        { "lukas-reineke/cmp-rg", tag = "v1.3.*" },
+        "onsails/lspkind.nvim",
+      }
+    }
+
+    -- LSP
+    use {
+      "neovim/nvim-lspconfig",
+      tag = "v0.1.*",
+      opt = true,
+      event = { "BufReadPre" },
+      wants = {
+        "mason.nvim",
+        "mason-lspconfig.nvim",
+        "mason-tool-installer.nvim",
+        "cmp-nvim-lsp",
+        "lua-dev.nvim",
+        "schemastore.nvim",
+        "typescript.nvim",
+      },
+      config = function()
+        require("init.lsp").setup()
+      end,
+      requires = {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        "folke/lua-dev.nvim",
+        "b0o/schemastore.nvim",
+        "jose-elias-alvarez/typescript.nvim",
+      },
+    }
+
+    -- NvimTree
+    use {
+      "kyazdani42/nvim-tree.lua",
+      wants = "nvim-web-devicons",
+      cmd = { "NvimTreeToggle", "NvimTreeClose" },
+      -- module = "nvim-tree",
+      config = function()
+        require("init.nvim-tree").setup()
+      end,
+    }
+
+    -- Telescope
+    use {
+      "nvim-telescope/telescope.nvim",
+      tag = "0.1.*",
+      opt = true,
+      config = function()
+        require("init.telescope").setup()
+      end,
+      cmd = { "Telescope" },
+      module = { "telescope", "telescope.builtin" },
+      keys = { "<leader>f" },
+      wants = {
+        "plenary.nvim",
+        "telescope-fzf-native.nvim",
+      },
+      requires = {
+        "nvim-lua/plenary.nvim",
+        { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+      },
+    }
+
+    -- Auto pairs
+    use {
+      "windwp/nvim-autopairs",
+      opt = true,
+      event = "InsertEnter",
+      wants = "nvim-treesitter",
+      module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
+      config = function()
+        require("init.nvim-autopairs").setup()
+      end,
+    }
+
+    -- IndentLine
+    use {
+      "lukas-reineke/indent-blankline.nvim",
+      tag = "v2.*",
+      config = function()
+        require("init.indent-blankline").setup()
+      end,
+    }
+
     -- whichkey
     use {
       "folke/which-key.nvim",
@@ -81,6 +183,7 @@ function M.setup()
     -- Buffer Line
     use {
       "akinsho/nvim-bufferline.lua",
+      tag = "v2.*",
       event = "BufReadPre",
       wants = "nvim-web-devicons",
       config = function()
@@ -104,6 +207,8 @@ function M.setup()
         require("nvim-web-devicons").setup { default = true }
       end,
     }
+    use { "onsails/lspkind.nvim" }
+
 
     if packer_bootstrap then
       print "Restart Neovim required after installation!"
@@ -113,7 +218,7 @@ function M.setup()
 
   packer_init()
 
-  local packer = require "packer"
+  local packer = require'packer'
   packer.init(conf)
   packer.startup(plugins)
 end

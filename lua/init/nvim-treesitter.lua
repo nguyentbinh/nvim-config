@@ -6,7 +6,7 @@ function M.setup()
     ensure_installed = "all",
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
-    sync_install = true,
+    sync_install = false,
 
     -- Automatically install missing parsers when entering buffer
     auto_install = true,

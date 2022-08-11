@@ -31,7 +31,7 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.*' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Useful tools to make life easier
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.*' }
 Plug 'sindrets/diffview.nvim'
