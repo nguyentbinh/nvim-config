@@ -4,8 +4,6 @@ local expr_opts = { noremap = true, silent = true, expr = true }
 
 vim.api.nvim_set_keymap("n", ";", ":", opts)
 
-vim.api.nvim_set_keymap("n", "<leader>ed", ":edit $MYVIMRC<CR>", default_opts)
-
 vim.api.nvim_set_keymap("n", "<leader><backspace>", ":noh<CR>", default_opts)
 
 vim.api.nvim_set_keymap("n", "n", "nzz", default_opts)
@@ -21,6 +19,6 @@ vim.api.nvim_set_keymap("n", "<Down>", "<C-w>5-", default_opts)
 vim.api.nvim_set_keymap("n", "<Left>", "<C-w>5<", default_opts)
 vim.api.nvim_set_keymap("n", "<Right>", "<C-w>5>", default_opts)
 
-vim.api.nvim_set_keymap("n", "<leader>y", '"+y', default_opts)
-vim.api.nvim_set_keymap("n", "<leader>p", "\"+p", default_opts)
-vim.api.nvim_set_keymap("n", "<leader>P", "\"+P", default_opts)
+vim.api.nvim_set_keymap("", "<leader>y", [["+y]], default_opts)
+vim.api.nvim_set_keymap("", "<leader>p", [["+p]], default_opts)
+vim.api.nvim_set_keymap("", "<leader>P", [["+P]], default_opts)

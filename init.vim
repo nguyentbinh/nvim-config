@@ -3,19 +3,27 @@ set sw=2
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'nathom/filetype.nvim'
+
 " LSP
 Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.*' }
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'WhoIsSethDaniel/mason-tool-installer.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'folke/lua-dev.nvim'
+Plug 'b0o/schemastore.nvim'
+Plug 'jose-elias-alvarez/typescript.nvim'
 
 " nvim-cmp
-Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-calc'
+Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-copilot'
-Plug 'hrsh7th/nvim-cmp'
 
 Plug 'lukas-reineke/cmp-rg', { 'tag': 'v1.3.*' }
 
@@ -41,8 +49,6 @@ Plug 'akinsho/toggleterm.nvim', { 'tag': 'v2.*' }
 
 Plug 'numToStr/Comment.nvim', { 'tag': 'v0.6.*' }
 
-Plug 'matze/vim-move', { 'tag': 'v1.*' }
-
 Plug 'windwp/nvim-autopairs'
 Plug 'kylechui/nvim-surround'
 
@@ -63,7 +69,4 @@ Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
 
-lua require("init")
-
-source $HOME/.config/nvim/plugin.vim
-source $HOME/.config/nvim/mapping.vim
+lua require("plugins").setup()
