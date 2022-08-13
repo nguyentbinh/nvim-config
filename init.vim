@@ -3,11 +3,14 @@ set sw=2
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'nathom/filetype.nvim'
+
 " LSP
 Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.*' }
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'WhoIsSethDaniel/mason-tool-installer.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'folke/lua-dev.nvim'
 Plug 'b0o/schemastore.nvim'
 Plug 'jose-elias-alvarez/typescript.nvim'

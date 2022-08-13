@@ -4,6 +4,7 @@ local servers = {
   html = {},
   terraformls = {},
   dockerls = {},
+  kotlin_language_server = {},
   jsonls = {
     settings = {
       json = {
@@ -91,9 +92,11 @@ local servers = {
 -- after the language server attaches to the current buffer
 function M.on_attach(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-  vim.api.nvim_buf_set_option(bufnr, "formatexpr", "v:lua.vim.lsp.formatexpr()")
 
   require'config.lsp.keymap'.setup(client, bufnr)
+
+ -- Configure formatting
+  require("config.lsp.null-ls.formatters").setup(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -117,6 +120,8 @@ local opts = {
 require'config.lsp.handlers'.setup()
 
 function M.setup()
+  require'config.lsp.null-ls'.setup(opts)
+
   require'config.lsp.installers'.setup(servers, opts)
 end
 

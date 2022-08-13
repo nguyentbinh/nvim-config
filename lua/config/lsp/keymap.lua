@@ -37,19 +37,18 @@ function M.setup(client, bufnr)
       name = "LSP",
       I = { "<CMD>LspInfo<CR>", "Info" },
       a = { "<CMD>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
-      f = { "<CMD>lua vim.lsp.buf.formatting()<CR>", "Formatting" },
-      d = { "<CMD>lua vim.lsp.buf.definition()<CR>", "Definition" },
-      D = { "<CMD>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
-      i = { "<CMD>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
+      d = { "<CMD>Telescope lsp_definitions<CR>", "Definition" },
+      D = { "<CMD>Telescope lsp_type_definitions<CR>", "Type Definition" },
+      i = { "<CMD>Telescope lsp_implementation<CR>", "Implementation" },
       h = { "<CMD>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
-      q = { "<CMD>lua vim.diagnostic.setqflist()<CR>", "Publish to Quickfix" },
+      q = { "<CMD>lua vim.diagnostic.setqflist()<CR>", "Diagnostic to Quickfix" },
       n = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
       r = { "<CMD>Telescope lsp_references<CR>", "References" },
     }
   }
 
   if client.server_capabilities.documentFormattingProvider then
-    keymap.l.F = { "<CMD>lua vim.lsp.buf.format({async = true})<CR>", "Format Document" }
+    keymap.l.f = { "<CMD>lua vim.lsp.buf.formatting()<CR>", "Formatting" }
   end
 
   whichkey.register(keymap, { noremap=true, buffer=bufnr, prefix='<leader>' })

@@ -6,7 +6,17 @@ function M.setup(servers, options)
   require("mason").setup()
 
   require("mason-tool-installer").setup {
-    ensure_installed = { "codelldb", "stylua", "shfmt", "shellcheck", "prettierd" },
+    ensure_installed = {
+      -- Linter
+      'sqlfluff',
+      'codespell',
+      'shellcheck',
+
+      -- Formatter
+      'autopep8',
+      'prettierd',
+      'fixjson',
+    },
     auto_update = false,
     -- run_on_start = true,
   }
