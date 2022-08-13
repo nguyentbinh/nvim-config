@@ -11,11 +11,7 @@ local servers = {
       },
     },
   },
-  pyright = {
-    analysis = {
-      typeCheckingMode = "off",
-    },
-  },
+  pyright = {},
   sumneko_lua = {
     settings = {
       Lua = {
@@ -94,10 +90,10 @@ local servers = {
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 function M.on_attach(client, bufnr)
-  -- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-  -- vim.api.nvim_buf_set_option(bufnr, "formatexpr", "v:lua.vim.lsp.formatexpr()")
+  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  vim.api.nvim_buf_set_option(bufnr, "formatexpr", "v:lua.vim.lsp.formatexpr()")
 
-  require'init.lsp.keymap'.setup(client, bufnr)
+  require'config.lsp.keymap'.setup(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -118,10 +114,10 @@ local opts = {
   }
 }
 
-require'init.lsp.handlers'.setup()
+require'config.lsp.handlers'.setup()
 
 function M.setup()
-  require'init.lsp.installers'.setup(servers, opts)
+  require'config.lsp.installers'.setup(servers, opts)
 end
 
 return M
