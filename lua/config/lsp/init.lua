@@ -73,7 +73,7 @@ local servers = {
   },
   vimls = {},
   yamlls = {
-    schemastore = {
+    schemaStore = {
       enable = true,
     },
     settings = {

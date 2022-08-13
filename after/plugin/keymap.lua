@@ -4,8 +4,6 @@ local expr_opts = { noremap = true, silent = true, expr = true }
 
 vim.api.nvim_set_keymap("n", ";", ":", opts)
 
-vim.api.nvim_set_keymap("n", "<leader>ed", ":edit $MYVIMRC<CR>", default_opts)
-
 vim.api.nvim_set_keymap("n", "<leader><backspace>", ":noh<CR>", default_opts)
 
 vim.api.nvim_set_keymap("n", "n", "nzz", default_opts)

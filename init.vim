@@ -5,13 +5,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " LSP
 Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.*' }
-Plug 'williamboman/nvim-lsp-installer'
-" Plug 'williamboman/mason.nvim'
-" Plug 'williamboman/mason-lspconfig.nvim'
-" Plug 'WhoIsSethDaniel/mason-tool-installer.nvim'
-" Plug 'folke/lua-dev.nvim'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'WhoIsSethDaniel/mason-tool-installer.nvim'
+Plug 'folke/lua-dev.nvim'
 Plug 'b0o/schemastore.nvim'
-" Plug 'jose-elias-alvarez/typescript.nvim'
+Plug 'jose-elias-alvarez/typescript.nvim'
 
 " nvim-cmp
 Plug 'hrsh7th/nvim-cmp'
