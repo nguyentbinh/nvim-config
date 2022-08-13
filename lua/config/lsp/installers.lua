@@ -8,12 +8,15 @@ function M.setup(servers, options)
   require("mason-tool-installer").setup {
     ensure_installed = {
       -- Linter
+      'actionlint',
       'sqlfluff',
       'codespell',
       'shellcheck',
+      'write-good',
 
       -- Formatter
-      'autopep8',
+      'black',
+      'isort',
       'prettierd',
       'fixjson',
     },

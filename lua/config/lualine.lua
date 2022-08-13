@@ -59,7 +59,7 @@ function M.setup()
       icons_enabled = true,
       theme = 'powerline',
       disabled_filetypes = {},
-      globalstatus = false,
+      globalstatus = true,
       refresh = {
         statusline = 500,
         tabline = 500,
@@ -73,7 +73,6 @@ function M.setup()
       lualine_x = {'encoding', 'fileformat', 'filetype'},
       lualine_y = {
         { lsp_client, icon = " ", color = { gui = "bold" } },
-        'progress'
       },
       lualine_z = {'location'}
     },

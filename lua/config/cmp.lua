@@ -29,7 +29,6 @@ function M.setup()
                 copilot = "[Copilot]",
                 buffer = "[Buffer]",
                 nvim_lsp = "[LSP]",
-                rg = "[RipGrep]"
               })
           })
       },
@@ -108,7 +107,6 @@ function M.setup()
           { name = 'copilot' },
           { name = 'buffer' },
           { name = 'path' },
-          { name = 'rg' },
         })
     })
 

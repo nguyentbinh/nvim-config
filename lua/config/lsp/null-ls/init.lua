@@ -20,7 +20,8 @@ end
 
 local sources = {
   -- formatting
-  b.formatting.autopep8,
+  b.formatting.black.with { extra_args = { "--fast" } },
+  b.formatting.isort,
   b.formatting.prettierd,
   b.formatting.fixjson,
   b.formatting.sqlfluff.with({
@@ -29,11 +30,13 @@ local sources = {
 
   -- diagnostics
   b.diagnostics.codespell,
+  b.diagnostics.actionlint,
   -- with_root_file(b.diagnostics.selene, "selene.toml"),
   with_diagnostics_code(b.diagnostics.shellcheck),
   b.diagnostics.sqlfluff.with({
     extra_args = { "--dialect", "postgres" }
   }),
+  b.diagnostics.write_good,
 
   -- code actions
   b.code_actions.gitsigns,

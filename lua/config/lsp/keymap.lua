@@ -39,7 +39,7 @@ function M.setup(client, bufnr)
       a = { "<CMD>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
       d = { "<CMD>Telescope lsp_definitions<CR>", "Definition" },
       D = { "<CMD>Telescope lsp_type_definitions<CR>", "Type Definition" },
-      i = { "<CMD>Telescope lsp_implementation<CR>", "Implementation" },
+      i = { "<CMD>Telescope lsp_implementations<CR>", "Implementation" },
       h = { "<CMD>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
       q = { "<CMD>lua vim.diagnostic.setqflist()<CR>", "Diagnostic to Quickfix" },
       n = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },

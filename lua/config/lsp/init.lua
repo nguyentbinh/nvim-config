@@ -1,7 +1,6 @@
 local M = {}
 
 local servers = {
-  html = {},
   terraformls = {},
   dockerls = {},
   kotlin_language_server = {},
@@ -95,8 +94,7 @@ function M.on_attach(client, bufnr)
 
   require'config.lsp.keymap'.setup(client, bufnr)
 
- -- Configure formatting
-  require("config.lsp.null-ls.formatters").setup(client, bufnr)
+  require'config.lsp.null-ls.formatters'.setup(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
