@@ -25,7 +25,20 @@ function M.setup()
     },
 
     pickers = {
+      lsp_definitions = {
+        initial_mode = "normal",
+      },
+
+      lsp_type_definitions = {
+        initial_mode = "normal",
+      },
+
+      lsp_implementations = {
+        initial_mode = "normal",
+      },
+
       lsp_references = {
+        initial_mode = "normal",
         theme = "dropdown",
         layout_config = {
           width = 0.5
@@ -40,11 +53,16 @@ function M.setup()
         override_file_sorter = true,     -- override the file sorter
         case_mode = "ignore_case",       -- or "ignore_case" or "respect_case"
                                          -- the default case_mode is "smart_case"
+      },
+
+      ["ui-select"] = {
+        require("telescope.themes").get_cursor {},
       }
     }
   }
 
   telescope.load_extension('fzf')
+  telescope.load_extension("ui-select")
 end
 
 return M

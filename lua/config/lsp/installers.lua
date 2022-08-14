@@ -9,6 +9,7 @@ function M.setup(servers, options)
     ensure_installed = {
       -- Linter
       'actionlint',
+      'ktlint',
       'sqlfluff',
       'codespell',
       'shellcheck',

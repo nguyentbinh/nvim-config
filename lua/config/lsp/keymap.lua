@@ -44,6 +44,7 @@ function M.setup(client, bufnr)
       q = { "<CMD>lua vim.diagnostic.setqflist()<CR>", "Diagnostic to Quickfix" },
       n = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
       r = { "<CMD>Telescope lsp_references<CR>", "References" },
+      l = { "<CMD>lua print(vim.inspect(vim.lsp.buf_get_clients()))<CR>", "List LSP Clients" },
     }
   }
 

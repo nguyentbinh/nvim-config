@@ -35,6 +35,7 @@ Plug 'RRethy/nvim-treesitter-textsubjects'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.*' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope-ui-select.nvim'
 
 " Useful tools to make life easier
 Plug 'github/copilot.vim'

@@ -22,11 +22,14 @@ local sources = {
   -- formatting
   b.formatting.black.with { extra_args = { "--fast" } },
   b.formatting.isort,
-  b.formatting.prettierd,
+  b.formatting.prettierd.with {
+    disabled_filetypes = { "json", "yaml" }
+  },
   b.formatting.fixjson,
   b.formatting.sqlfluff.with({
     extra_args = { "--dialect", "postgres" }
   }),
+  b.formatting.ktlint,
 
   -- diagnostics
   b.diagnostics.codespell,
@@ -37,6 +40,7 @@ local sources = {
     extra_args = { "--dialect", "postgres" }
   }),
   b.diagnostics.write_good,
+  b.diagnostics.ktlint,
 
   -- code actions
   b.code_actions.gitsigns,
