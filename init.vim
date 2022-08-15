@@ -44,6 +44,8 @@ Plug 'tpope/vim-fugitive', { 'tag': 'v3.*' }
 Plug 'sindrets/diffview.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
+Plug 'rcarriga/nvim-notify', { 'tag': 'v3.2.*' }
+
 Plug 'akinsho/toggleterm.nvim', { 'tag': 'v2.*' }
 
 Plug 'numToStr/Comment.nvim', { 'tag': 'v0.6.*' }

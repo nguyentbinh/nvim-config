@@ -10,14 +10,6 @@ local with_diagnostics_code = function(builtin)
   }
 end
 
-local with_root_file = function(builtin, file)
-  return builtin.with {
-    condition = function(utils)
-      return utils.root_has_file(file)
-    end,
-  }
-end
-
 local sources = {
   -- formatting
   b.formatting.black.with { extra_args = { "--fast" } },
@@ -26,9 +18,7 @@ local sources = {
     disabled_filetypes = { "json", "yaml" }
   },
   b.formatting.fixjson,
-  b.formatting.sqlfluff.with({
-    extra_args = { "--dialect", "postgres" }
-  }),
+  b.formatting.sqlfluff,
   b.formatting.ktlint,
 
   -- diagnostics
@@ -36,9 +26,7 @@ local sources = {
   b.diagnostics.actionlint,
   -- with_root_file(b.diagnostics.selene, "selene.toml"),
   with_diagnostics_code(b.diagnostics.shellcheck),
-  b.diagnostics.sqlfluff.with({
-    extra_args = { "--dialect", "postgres" }
-  }),
+  b.diagnostics.sqlfluff,
   b.diagnostics.write_good,
   b.diagnostics.ktlint,
 

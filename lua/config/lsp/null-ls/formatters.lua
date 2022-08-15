@@ -1,5 +1,6 @@
 local M = {}
 
+local utils = require'utils'
 local nls_utils = require'config.lsp.null-ls.utils'
 local nls_sources = require'null-ls.sources'
 local api = vim.api
@@ -11,9 +12,9 @@ M.autoformat = false
 function M.toggle()
   M.autoformat = not M.autoformat
   if M.autoformat then
-    print "Enabled format on save"
+    utils.info("Enabled format on save", "Formatting")
   else
-    print "Disabled format on save"
+    utils.warn("Disabled format on save", "Formatting")
   end
 end
 
@@ -22,7 +23,7 @@ function M.format()
     local view = vim.fn.winsaveview()
     vim.lsp.buf.formatting {}
     vim.fn.winrestview(view)
-    print "Buffer formatted"
+    utils.info("Buffer formatted", "Formatting")
   end
 end
 

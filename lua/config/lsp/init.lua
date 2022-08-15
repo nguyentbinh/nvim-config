@@ -91,6 +91,11 @@ local servers = {
 -- after the language server attaches to the current buffer
 function M.on_attach(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  vim.api.nvim_buf_set_option(bufnr, "formatexpr", "v:lua.vim.lsp.formatexpr()")
+
+  if client.server_capabilities.definitionProvider then
+    vim.api.nvim_buf_set_option(bufnr, "tagfunc", "v:lua.vim.lsp.tagfunc")
+  end
 
   require'config.lsp.keymap'.setup(client, bufnr)
 
