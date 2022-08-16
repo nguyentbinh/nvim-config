@@ -25,7 +25,7 @@ local function normal_keymap()
       name = "Buffer",
       c = { "<CMD>bdelete %<CR>", "Close Buffer" },
       f = { "<CMD>bdelete! %<CR>", "Force Close Buffer" },
-      D = { "<CMD>bwipeout *<CR>", "Delete All Buffers" },
+      D = { "<CMD>%bwipeout<CR>", "Delete All Buffers" },
       b = { "<CMD>BufferLinePick<CR>", "Pick a Buffer" },
       p = { "<CMD>BufferLinePickClose<CR>", "Pick & Close a Buffer" },
     },

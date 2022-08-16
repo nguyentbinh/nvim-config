@@ -59,9 +59,9 @@ function M.setup()
     textsubjects = {
       enable = true,
       keymaps = {
-          ['.'] = 'textsubjects-smart',
-          [';'] = 'textsubjects-container-outer',
-          ['i;'] = 'textsubjects-container-inner',
+        ['.'] = 'textsubjects-smart',
+        [';'] = 'textsubjects-container-outer',
+        ['i;'] = 'textsubjects-container-inner',
       },
     },
   }
