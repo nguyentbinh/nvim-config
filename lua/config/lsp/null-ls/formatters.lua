@@ -7,24 +7,15 @@ local api = vim.api
 
 local method = require("null-ls").methods.FORMATTING
 
-M.autoformat = false
-
-function M.toggle()
-  M.autoformat = not M.autoformat
-  if M.autoformat then
-    utils.info("Enabled format on save", "Formatting")
-  else
-    utils.warn("Disabled format on save", "Formatting")
-  end
-end
+local allow_autoformat_filetype = {
+  terraform = true
+}
 
 function M.format()
-  if M.autoformat then
-    local view = vim.fn.winsaveview()
-    vim.lsp.buf.formatting {}
-    vim.fn.winrestview(view)
-    utils.info("Buffer formatted", "Formatting")
-  end
+  local view = vim.fn.winsaveview()
+  vim.lsp.buf.formatting {}
+  vim.fn.winrestview(view)
+  utils.info("Buffer formatted", "Formatting")
 end
 
 function M.setup(client, bufnr)
@@ -37,9 +28,14 @@ function M.setup(client, bufnr)
     enable = not (client.name == "null-ls")
   end
 
+  local enable_autoformat = false
+  if allow_autoformat_filetype[filetype] ~= nil then
+    enable_autoformat = allow_autoformat_filetype[filetype]
+  end
+
   client.server_capabilities.documentFormattingProvder = enable
   client.server_capabilities.documentRangeFormattingProvider = enable
-  if client.server_capabilities.documentFormattingProvider then
+  if client.server_capabilities.documentFormattingProvider and enable_autoformat then
     local lsp_format_grp = api.nvim_create_augroup("LspFormat", { clear = true })
     api.nvim_create_autocmd("BufWritePre", {
       callback = function()

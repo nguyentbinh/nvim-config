@@ -20,7 +20,6 @@ local sources = {
   b.formatting.fixjson,
   b.formatting.sqlfluff,
   b.formatting.ktlint,
-  b.formatting.terraform_fmt,
 
   -- diagnostics
   b.diagnostics.codespell,

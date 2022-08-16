@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
   command = "set cursorline",
   group = cursor_line,
 })
-vim.api.nvim_create_autocmd({ "BufLeave", "WinEnter" }, {
+vim.api.nvim_create_autocmd({ "BufLeave", "WinLeave" }, {
   pattern = "*",
   command = "set nocursorline",
   group = cursor_line,
