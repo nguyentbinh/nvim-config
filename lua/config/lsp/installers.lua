@@ -9,7 +9,6 @@ function M.setup(servers, options)
     ensure_installed = {
       -- Linter
       'actionlint',
-      'ktlint',
       'sqlfluff',
       'codespell',
       'shellcheck',
@@ -19,7 +18,6 @@ function M.setup(servers, options)
       'black',
       'isort',
       'prettierd',
-      'fixjson',
     },
     auto_update = false,
     -- run_on_start = true,

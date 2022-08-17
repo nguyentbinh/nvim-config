@@ -17,18 +17,25 @@ local sources = {
   b.formatting.prettierd.with {
     disabled_filetypes = { "json", "yaml" }
   },
-  b.formatting.fixjson,
-  b.formatting.sqlfluff,
-  b.formatting.ktlint,
+  -- b.formatting.fixjson,
+  b.formatting.sqlfluff.with {
+    condition = function(utils)
+      return utils.root_has_file(".sqlfluff")
+    end,
+  },
+  -- b.formatting.ktlint,
 
   -- diagnostics
   b.diagnostics.codespell,
   b.diagnostics.actionlint,
-  -- with_root_file(b.diagnostics.selene, "selene.toml"),
   with_diagnostics_code(b.diagnostics.shellcheck),
-  b.diagnostics.sqlfluff,
+  b.diagnostics.sqlfluff.with {
+    condition = function(utils)
+      return utils.root_has_file(".sqlfluff")
+    end,
+  },
   b.diagnostics.write_good,
-  b.diagnostics.ktlint,
+  -- b.diagnostics.ktlint,
 
   -- code actions
   b.code_actions.gitsigns,

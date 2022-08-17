@@ -5,6 +5,15 @@ function M.setup()
   local actions = require'telescope.actions'
 
   telescope.setup {
+    find_command = {
+      "rg",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+    },
+
     defaults = {
       path_display = { "smart" },
 
