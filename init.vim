@@ -33,9 +33,9 @@ Plug 'RRethy/nvim-treesitter-textsubjects'
 
 " Fuzzy Searching
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.*' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'nvim-telescope/telescope-ui-select.nvim'
 
 " Useful tools to make life easier
 Plug 'github/copilot.vim'
@@ -62,6 +62,7 @@ Plug 'lukas-reineke/indent-blankline.nvim', { 'tag': 'v2.*' }
 Plug 'norcalli/nvim-colorizer.lua'
 
 " Interface
+Plug 'stevearc/dressing.nvim'
 Plug 'onsails/lspkind.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'

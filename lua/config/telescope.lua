@@ -5,16 +5,10 @@ function M.setup()
   local actions = require'telescope.actions'
 
   telescope.setup {
-    find_command = {
-      "rg",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-    },
-
     defaults = {
+      prompt_prefix = "  ",
+      selection_caret = " ",
+
       path_display = { "smart" },
 
       mappings = {
@@ -63,15 +57,10 @@ function M.setup()
         case_mode = "ignore_case",       -- or "ignore_case" or "respect_case"
                                          -- the default case_mode is "smart_case"
       },
-
-      ["ui-select"] = {
-        require("telescope.themes").get_cursor {},
-      }
     }
   }
 
   telescope.load_extension('fzf')
-  telescope.load_extension("ui-select")
 end
 
 return M
