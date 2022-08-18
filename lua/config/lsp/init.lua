@@ -3,7 +3,6 @@ local M = {}
 local servers = {
   terraformls = {},
   dockerls = {},
-  kotlin_language_server = {},
   jsonls = {
     settings = {
       json = {

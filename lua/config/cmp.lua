@@ -104,7 +104,7 @@ function M.setup()
       sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'nvim_lsp_signature_help' },
-          { name = 'copilot' },
+          -- { name = 'copilot' },
           { name = 'buffer' },
           { name = 'path' },
         })

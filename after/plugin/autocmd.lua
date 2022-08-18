@@ -21,3 +21,5 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "tf",
   command = "set filetype=terraform"
 })
+
+vim.api.nvim_create_autocmd("BufEnter", { command = "syntax enable" })

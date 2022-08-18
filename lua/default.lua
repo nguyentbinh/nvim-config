@@ -6,7 +6,7 @@ vim.opt.encoding = 'utf-8'
 vim.opt.fileformat = 'unix'
 -- vim.opt.clipboard = 'unnamedplus'
 vim.opt.termguicolors = true
-vim.cmd "colorscheme nightfox"
+-- vim.cmd "colorscheme nightfox"
 
 vim.opt.completeopt = "menu,menuone,noselect"
 

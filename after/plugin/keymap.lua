@@ -22,3 +22,5 @@ vim.api.nvim_set_keymap("n", "<Right>", "<C-w>5>", default_opts)
 vim.api.nvim_set_keymap("", "<leader>y", [["+y]], default_opts)
 vim.api.nvim_set_keymap("", "<leader>p", [["+p]], default_opts)
 vim.api.nvim_set_keymap("", "<leader>P", [["+P]], default_opts)
+
+vim.keymap.set("n", "<F2>", "<CMD>NvimTreeToggle<CR>", { noremap=true, silent=true })
