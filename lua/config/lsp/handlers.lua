@@ -1,5 +1,7 @@
 local M = {}
 
+local utils = require 'config.lsp.utils'
+
 function M.setup()
   local config = {
     float = {
@@ -20,18 +22,9 @@ function M.setup()
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, config.float)
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, config.float)
 
-  vim.lsp.handlers["window/showMessage"] = function(err, method, params, client_id)
-    local client = vim.lsp.get_client_by_id(client_id)
-    local severity = ({
-      'ERROR',
-      'WARN',
-      'INFO',
-      'DEBUG',
-    })[params.type]
-    vim.notify(method.message, severity, {
-      title = 'LSP - ' .. client.name,
-    })
-  end
+  vim.lsp.handlers["window/showMessage"] = utils.setup_message
+
+  vim.lsp.handlers["$/progress"] = utils.setup_progress
 end
 
 return M

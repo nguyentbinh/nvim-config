@@ -16,6 +16,8 @@ vim.api.nvim_create_autocmd({ "BufLeave", "WinLeave" }, {
   group = cursor_line,
 })
 
+vim.api.nvim_create_autocmd("FocusGained", { command = ":checktime" })
+
 -- Terraform set filetype
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "tf",
