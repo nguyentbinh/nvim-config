@@ -64,7 +64,7 @@ Plug 'onsails/lspkind.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
-Plug 'EdenEast/nightfox.nvim'
+Plug 'haishanh/night-owl.vim'
 
 call plug#end()
 
