@@ -57,7 +57,7 @@ function M.setup()
   require'lualine'.setup {
     options = {
       icons_enabled = true,
-      theme = 'powerline',
+      theme = 'auto',
       disabled_filetypes = {},
       globalstatus = true,
       refresh = {

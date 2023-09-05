@@ -13,7 +13,7 @@ Plug 'WhoIsSethDaniel/mason-tool-installer.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'folke/neodev.nvim'
 Plug 'b0o/schemastore.nvim'
-Plug 'jose-elias-alvarez/typescript.nvim'
+Plug 'zbirenbaum/copilot.lua'
 
 " nvim-cmp
 Plug 'hrsh7th/nvim-cmp'
@@ -23,6 +23,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-calc'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'zbirenbaum/copilot-cmp'
 
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

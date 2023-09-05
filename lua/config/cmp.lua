@@ -28,6 +28,7 @@ function M.setup()
                 path = "[Path]",
                 buffer = "[Buffer]",
                 nvim_lsp = "[LSP]",
+                copilot = "[CP]",
               })
           })
       },
@@ -105,6 +106,7 @@ function M.setup()
           { name = 'nvim_lsp_signature_help' },
           { name = 'buffer' },
           { name = 'path' },
+          { name = 'copilot' },
         })
     })
 
