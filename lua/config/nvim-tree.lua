@@ -34,7 +34,10 @@ function M.setup()
     on_attach = on_attach,
     hijack_netrw = true,
     respect_buf_cwd = true,
-    sort_by = "case_insensitive",
+    sort = {
+      sorter = "name",
+      folders_first = true,
+    },
     view = {
       adaptive_size = true,
       width = 50,
